@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crypto Airdrop Alerts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+      background: #0d1117;
+      color: #ffffff;
+    }
+    h1 {
+      text-align: center;
+      color: #00ffa2;
+      margin-bottom: 5px;
+    }
+    p {
+      text-align: center;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    .card {
+      background: #161b22;
+      border-radius: 12px;
+      padding: 15px;
+      margin-top: 15px;
+    }
+    .card b {
+      font-size: 16px;
+    }
+    .btn {
+      display: block;
+      margin-top: 12px;
+      padding: 10px;
+      text-align: center;
+      background: #00ffa2;
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      font-size: 15px;
+    }
+    .refresh {
+      background: #238636;
+      color: #fff;
+    }
+    .timer {
+      margin-top: 15px;
+      text-align: center;
+      color: #ffcc00;
+      font-size: 14px;
+    }
+    footer {
+      margin-top: 25px;
+      text-align: center;
+      font-size: 11px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🚀 Crypto Airdrops – Today</h1>
+<p>No Investment • Limited Time Offers</p>
+
+<div class="card">
+  <b>🪙 USDT Reward Airdrop</b><br>
+  💰 Reward: $10 – $50<br>
+  ⏳ Status: LIVE
+  <button class="btn" onclick="claimAirdrop()">CLAIM NOW</button>
+</div>
+
+<div class="card">
+  <b>🪙 TON Network Airdrop</b><br>
+  💰 Reward: Up to $30<br>
+  ⏳ Status: LIVE
+  <button class="btn" onclick="claimAirdrop()">CLAIM NOW</button>
+</div>
+
+<div class="card">
+  <b>🪙 New Meme Coin Airdrop</b><br>
+  💰 Reward: $5 – $25<br>
+  ⏳ Status: LIVE
+  <button class="btn" onclick="claimAirdrop()">CLAIM NOW</button>
+</div>
+
+<div class="timer" id="timer"></div>
+
+<button class="btn refresh" onclick="refreshAds()">🔄 Load New Airdrops</button>
+
+<footer>
+  Disclaimer: This app lists promotional airdrop offers.
+  Verify details before participation. No guarantees.
+</footer>
+
+<!-- 🔥 MONETAG SDK -->
+<script src='//libtl.com/sdk.js'
+        data-zone='10433810'
+        data-sdk='show_10433810'></script>
+
+<script>
+  const SMARTLINK = "https://otieu.com/4/10451328";
+
+  function claimAirdrop() {
+    show_10433810().then(() => {
+      window.open(SMARTLINK, "_blank");
+    }).catch(() => {
+      window.open(SMARTLINK, "_blank");
+    });
+  }
+
+  function refreshAds() {
+    show_10433810('pop');
+  }
+
+  // Countdown Timer (2 hours)
+  let time = 7200;
+  setInterval(() => {
+    let h = Math.floor(time / 3600);
+    let m = Math.floor((time % 3600) / 60);
+    let s = time % 60;
+    document.getElementById("timer").innerText =
+      `⏳ Offers expire in ${h}h ${m}m ${s}s`;
+    if (time > 0) time--;
+  }, 1000);
+</script>
+
+</body>
+</html>
